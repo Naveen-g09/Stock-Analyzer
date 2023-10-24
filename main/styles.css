@@ -1,0 +1,244 @@
+/* Base styles for all devices */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: #333;
+}
+
+header {
+    /* background-color: #333; */
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    /* background-color: #fff; */
+    /* border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.input-group label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-group button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+    background-color: #555;
+}
+
+
+.chart-container {
+    margin-left: 40px;
+    max-width: 45%; /* 50% for each graph */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: inline-block;
+    width: 40%; /* 50% width for each graph to place them side by side */
+}
+
+.chart-container canvas {
+    max-height: 400px; /* Set a max height to control the size of the graph */
+}
+
+.hidden {
+    display: none;
+}
+
+.Btn {
+    margin-left: 10px;
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  
+  .Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+  }
+  
+  .Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+  }
+  
+  .Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+  }
+
+
+
+
+  input {
+     margin-top: 0;
+    border-radius: 10px;
+    outline: 2px solid #00a6fb;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #d6f1ff;
+    outline-offset: 3px;
+    padding: 10px 12.5px;
+    transition: all 0.2s ease;
+    width: 250px;
+  }
+  
+  input:hover {  background-color: #fff;
+  }
+  
+  
+  input:focus {
+    outline-offset: -6px;
+    background-color: #d6f1ff;
+  }
+
+/* Center and style stock details section */
+#stockDetails {
+    text-align: left;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 50%; /* Limit the width to 50% */
+}
+
+#stockDetails p {
+    margin: 10px 0;
+}
+
+
+/* ... (your existing CSS) */
+
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #555;
+}
+
+/* ... (your existing CSS) */
+
+
+
+footer{ position: fixed; /* Fixed position */
+    bottom: 0; /* Positioned at the bottom of the viewport */
+    width: 100%; /* Takes the full width of the viewport */
+    padding: 10px; /* Add padding for spacing */
+    text-align: center; /* Center-align text */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .input-group label {
+        margin-bottom: 10px;
+    }
+
+    .input-group input[type="text"] {
+        width: 100%;
+        max-width: none;
+    }
+
+    .input-group button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #highChartContainer,
+    #lowChartContainer {
+        margin: 10px 0;
+    }
+}

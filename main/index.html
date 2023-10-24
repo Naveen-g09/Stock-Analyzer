@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAANmiAMzZogHp2yP9xNmiARAAAAAAAAAAAAAAAAAAAAAAsWi0/LFgrMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFe9+8Vdw/34XcP++2bJ/9sAAAAAAAAAAC5dLmpjvlv3YcZh/2PHZP9es1STMFkrZgAAAAAAAAAAAAAAAAAAAABTu/zzccv9/3PP/v9Vvf3+Ysj+sGPI/qhixmL/Yc1m/2PGYf9nuFf/YcVk/7/avf9prWTGAAAAAAAAAAAAAAAAWL/963vO/f9zyP3/X8X+/2jN//9pzf//Y8Je/1/cdP+P6qD/kuqi/1/acv+XzJv/cK5s/2axUv9TsVkaAAAAAEdj5k9vwPqMc8n+hFi//Pxdw/3/WsH9/1jBqf5d5Hn/v/HK/4bYnf/e8On/0+nh/2bEdv9mtVT/W7RTlGU583NoQuv8SxDRbAAAAABUu/z9dsz9/3HO/v9UvPz/XcT9/23J0f/k9uv/2PDh/9n23v+b66r/XuN4/1W4U4kAAAAAYSvgPm1M8f1VIdfcXMP9+3/P/f960f7/XcT9/2jN//9qz///XcP0/17adf+V5qb/YuF6/1bEW0wAAAAAAAAAAAAAAAAvFXBnXSvg+kti5ahzxfyba8j+olvB/f9cwv3/XcT+/1rB/f9ozP//X8bN/1i/8sgAAAAAAAAAAAAAAAAAAAAAAAAAAGhD6+BqR+7/TBLPl1Zn5jJXvf3/eM7+/2/O//9VvPz/XML9/1e//P9bwv3IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBxzHWAy5PVDW+ZZYsf+/X3L/f981P//XMP9/2nN//9pzv//WcH9yQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgNOTQWCfa90Ne4z13x/umZcX8xl7E/f9awf3/WL78/1zD/MgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGM6551sSvD/TRPOeSpefkJcwP3/edD+/2/N/v9Yv/3KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMxv0gFEa1NAnW/47a83+/3rJ/f9xy/3/WL79vQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsZdApvUPP/Vyfb80ls6GJziO/rbsr/hgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGU96epvUPP/bUzx/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuFnE9MyB1bzYkeHwuGHBTAAAAAAAAAAAAAAAA//8AAIcPAACAAwAAgAEAAMAAAACwAAAAwAMAAOADAADiAwAA+gMAAPkDAAD8wwAA/kMAAP8nAAD/jwAA//8AAA==" rel="icon" type="image/x-icon">
+    <title>Stock Data Visualization</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Stock Data Visualization</h1>
+    </header>
+    <div class="container">
+        <div class="input-group">
+            <label for="stockSymbol"></label>
+            <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol:">
+            <button id="getDataButton" class="Btn">Get Data</button>
+        </div>
+    </div>
+    <div id="stockDetails" class="hidden">
+        <div class="container">
+            <h2>Stock Details</h2>
+            <p><strong>Symbol:</strong> <span id="stockSymbolDisplay"></span></p>
+            <p><strong>Name:</strong> <span id="stockName"></span></p>
+            <p><strong>Volume:</strong> <span id="stockVolume"></span></p>
+            <p><strong>52-Week High:</strong> <span id="stockHigh52"></span></p>
+            <p><strong>52-Week Low:</strong> <span id="stockLow52"></span></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="chart-container" id="highChartContainer">
+            <h2>Highs</h2>
+            <canvas id="highChartCanvas"></canvas>
+        </div>
+        <div class="chart-container" id="lowChartContainer">
+            <h2>Lows</h2>
+            <canvas id="lowChartCanvas"></canvas>
+        </div>
+    </div>
+    <!-- <div class="container" id="historicalChartContainer" class="hidden">
+        <h2>Historical Data</h2>
+        <div id="historicalChart"></div>
+    </div> -->
+
+
+    <footer>
+        <p>Author: Anushka</p>
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

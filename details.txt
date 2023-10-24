@@ -1,0 +1,60 @@
+Documenting the provided HTML and JavaScript code:
+
+### HTML Structure
+
+The HTML code represents a web page for Stock Data Visualization. Here's a breakdown of its structure:
+
+1. `<!DOCTYPE html>`: Specifies the document type and version.
+2. `<html>`: The root HTML element.
+3. `<head>`: Contains metadata and links to external resources.
+   - `<meta charset="UTF-8">`: Defines the character encoding as UTF-8.
+   - `<meta name="viewport" content="width=device-width, initial-scale=1">`: Sets the viewport for responsive design.
+   - `<link>`: Includes a base64-encoded favicon (icon for the web page).
+   - `<title>`: Sets the title of the web page.
+   - `<link>`: Links an external CSS file, "styles.css".
+4. `<body>`: Contains the main content of the web page.
+   - `<header>`: Displays the title, "Stock Data Visualization."
+   - `<div class="container">`: A container for the main content.
+     - `<div class="input-group">`: A container for input elements.
+       - `<label>`: A label for an input field (unused).
+       - `<input type="text" id="stockSymbol" placeholder="Enter Stock Symbol:">`: An input field for entering a stock symbol.
+       - `<button id="getDataButton" class="Btn">Get Data</button>`: A button to trigger data retrieval.
+     - `<div id="stockDetails" class="hidden">`: A container for stock details (initially hidden).
+       - `<div class="container">`: Nested container.
+         - `<h2>Stock Details</h2>`: Heading for stock details.
+         - Several paragraphs with stock information, each containing a `<strong>` tag and a `<span>` tag for displaying dynamic data.
+     - Two chart containers with `<canvas>` elements for displaying stock data charts (initially empty).
+   - `<footer>`: The page's footer with the author's name.
+   - Three `<script>` tags for JavaScript dependencies and the main script.
+
+### JavaScript Functionality
+
+The JavaScript code defines several functions and event listeners to handle stock data retrieval, display, and chart creation. Here's an overview of what the code does:
+
+1. **Event Listener**: The code waits for the DOM to be fully loaded using `DOMContentLoaded`.
+
+2. **Element Retrieval**: It retrieves various HTML elements by their IDs and stores them in variables.
+
+3. **Event Listener**: It attaches a click event listener to the "Get Data" button, calling the `getData` function when clicked.
+
+4. **getData Function**: When the "Get Data" button is clicked, this function is triggered.
+   - Clears any existing charts and retrieves the user-inputted stock symbol.
+   - Calls two separate API endpoints (`historicalDataUrl` and `stockDetailsUrl`) to fetch historical stock data and stock details, respectively.
+
+5. **Data Fetching**: The code uses the `fetch` API to make two asynchronous HTTP requests:
+   - It fetches historical stock data and extracts high and low prices over time.
+   - It fetches stock details such as name, volume, and 52-week high/low.
+
+6. **Display Functions**:
+   - `displayStockDetails`: Displays stock details by updating HTML elements.
+   - `displayHighsAndLows`: Calculates and displays high and low stock charts using Chart.js.
+   - `clearCharts`: Clears the chart canvases and hides stock details when needed.
+
+7. **Chart Configuration Functions**:
+   - `calculateAspectRatio` and `calculateMaxHeight`: Calculate chart aspect ratio and maximum height based on data values.
+   - `getChartOptions`: Define options for the Chart.js charts, including titles, scales, and styling.
+   - `createChart`: Create a new Chart.js chart on a canvas element with provided data and options.
+
+8. **Additional**: There's a commented-out section for a historical data chart that seems to be unused in the current code.
+
+In summary, this code sets up a web page for stock data visualization. When the user enters a stock symbol and clicks "Get Data," the code fetches historical stock data and stock details, then displays them along with high and low stock charts. The charts are dynamically generated based on the retrieved data.
